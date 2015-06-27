@@ -2,6 +2,7 @@ package com.senac.aula03.aula03_gabriel;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ public class MainActivity extends Activity {
     TextView tvTitulo;
     Button btSetar;
     Button btLimpar;
+    Button btNavegar;
     Context context;
 
     @Override
@@ -34,7 +36,15 @@ public class MainActivity extends Activity {
         btLimpar = (Button) findViewById(R.id.btLimpar);
 
         ivImagem.setImageResource(R.drawable.hulk);
-        tvTitulo.setText("Nome do meu produto!");
+        tvTitulo.setText("Hulk esmaga!!!");
+
+        btNavegar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SegundaActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btSetar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +61,7 @@ public class MainActivity extends Activity {
                 ivImagem.setImageResource(android.R.color.transparent);
             }
         });
+
 
 
 
