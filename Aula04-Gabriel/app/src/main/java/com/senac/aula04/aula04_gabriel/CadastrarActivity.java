@@ -1,19 +1,56 @@
 package com.senac.aula04.aula04_gabriel;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class CadastrarActivity extends Activity {
+
+    EditText etCodigo, etNome, etDescricao, etImagem;
+    Button btCadastrar;
+    Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
-    }
 
+        context = this;
+
+        etCodigo = (EditText) findViewById(R.id.etCodigo);
+        etNome = (EditText) findViewById(R.id.etNome);
+        etDescricao = (EditText) findViewById(R.id.etDescricao);
+        etImagem = (EditText) findViewById(R.id.etImagem);
+
+        btCadastrar = (Button) findViewById(R.id.btCadastrar);
+
+        btCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String codigo = etCodigo.getText().toString();
+                String nome = etNome.getText().toString();
+                String descricao = etDescricao.getText().toString();
+                String imagem = etImagem.getText().toString();
+
+                String resultado =
+                        "Código: " + codigo +
+                        " Nome: " + nome +
+                        " Descrição: " + descricao +
+                        " Link da Imagem: " + imagem;
+
+                Toast.makeText(context,resultado,Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
