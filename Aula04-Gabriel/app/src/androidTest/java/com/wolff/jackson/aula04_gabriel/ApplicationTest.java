@@ -1,4 +1,4 @@
-package com.senac.aula04.aula04_gabriel;
+package com.wolff.jackson.aula04_gabriel;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

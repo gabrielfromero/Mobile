@@ -1,4 +1,4 @@
-package com.senac.aula04.aula04_gabriel;
+package com.wolff.jackson.aula04_gabriel;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,8 +31,10 @@ public class MainActivity extends Activity {
         btListar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context,ListarActivity.class);
                 startActivity(intent);
+
             }
         });
 
@@ -41,6 +43,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(context,CadastrarActivity.class);
                 startActivity(intent);
+
             }
         });
 
@@ -49,8 +52,12 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(context,SobreActivity.class);
                 startActivity(intent);
+
             }
         });
+
+
+
     }
 
 

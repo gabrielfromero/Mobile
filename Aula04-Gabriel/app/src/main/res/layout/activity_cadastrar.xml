@@ -4,14 +4,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.senac.aula04.aula04_gabriel.CadastrarActivity"
+
+    tools:context="com.wolff.jackson.aula04_gabriel.CadastrarActivity"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:id="@+id/root">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView" >
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal" >
 
         <LinearLayout
             android:orientation="vertical"
@@ -20,52 +22,46 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:id="@+id/etCodigo"
-                android:background="#ff00b4ba"
-                android:inputType="number"
-                android:layout_margin="10dp"
-                android:hint="Código"
-                android:layout_gravity="center_vertical|right" />
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/codigo"
+                android:layout_marginBottom="10dp"
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/etNome"
-                android:inputType="text"
-                android:background="#ff00b4ba"
-                android:layout_margin="10dp"
-                android:hint="Nome"
-                android:layout_gravity="left" />
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/nome"
+                android:layout_marginBottom="10dp"
+                android:inputType="text" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:id="@+id/etDescricao"
-                android:inputType="text"
-                android:layout_weight="0.39"
-                android:layout_margin="10dp"
-                android:background="#ff03ba15"
-                android:hint="Descrição"
-                android:layout_gravity="left|center_vertical" />
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/descricao"
+                android:layout_marginBottom="10dp"
+                android:inputType="text" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/etImagem"
-                android:inputType="textUri"
-                android:background="#ff00b4ba"
-                android:layout_margin="10dp"
-                android:layout_gravity="left"
-                android:hint="Link da Imagem" />
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/imagem"
+                android:layout_marginBottom="10dp"
+                android:inputType="textUri|textWebEditText" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastrar"
+                android:text="@string/cadastrar"
                 android:id="@+id/btCadastrar"
-                android:background="#ff7d00ba"
-                android:layout_margin="10dp" />
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
     </ScrollView>
 

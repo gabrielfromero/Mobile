@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.senac.aula04.aula04_gabriel"
+        applicationId "com.wolff.jackson.aula04_jacksonwolff"
         minSdkVersion 21
         targetSdkVersion 21
         versionCode 1
@@ -21,4 +21,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:support-v4:22.1.+'
+
 }

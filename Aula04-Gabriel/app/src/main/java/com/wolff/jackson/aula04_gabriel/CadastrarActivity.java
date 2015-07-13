@@ -1,8 +1,13 @@
-package com.senac.aula04.aula04_gabriel;
+package com.wolff.jackson.aula04_gabriel;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,13 +15,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 
 public class CadastrarActivity extends Activity {
 
     EditText etCodigo, etNome, etDescricao, etImagem;
     Button btCadastrar;
     Context context;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +47,48 @@ public class CadastrarActivity extends Activity {
                 String descricao = etDescricao.getText().toString();
                 String imagem = etImagem.getText().toString();
 
-                String resultado =
-                        "Código: " + codigo +
-                        " Nome: " + nome +
-                        " Descrição: " + descricao +
-                        " Link da Imagem: " + imagem;
+                HashMap<String,String> mapProduto = new HashMap<String, String>();
 
-                Toast.makeText(context,resultado,Toast.LENGTH_SHORT).show();
+                mapProduto.put("codigo", codigo);
+                mapProduto.put("nome", nome);
+                mapProduto.put("descricao", descricao);
+                mapProduto.put("imagem", imagem);
+
+
+                String resultado = "Código: " + mapProduto.get("codigo") +
+                                   " Nome: " + mapProduto.get("nome") +
+                                   " Descrição: " + mapProduto.get("descricao") +
+                                   " Link da Imagem: " + mapProduto.get("imagem");
+
+                Toast.makeText(context, resultado, Toast.LENGTH_LONG).show();
+
+
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
+                                .setSmallIcon(R.drawable.bg_home)
+                                .setContentTitle("Produto Cadastro")
+                                .setContentText(mapProduto.get("nome"));
+
+                Intent resultIntent = new Intent(context, MainActivity.class);
+
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+
+                stackBuilder.addParentStack(MainActivity.class);
+
+                stackBuilder.addNextIntent(resultIntent);
+                PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+                mBuilder.setContentIntent(resultPendingIntent);
+                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+                mNotificationManager.notify(0, mBuilder.build());
+
+
+
             }
         });
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

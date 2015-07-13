@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aula04-Gabriel</string>
+    <string name="app_name">Aula 04 - Jackson Wolff</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -7,11 +7,10 @@
     <string name="title_activity_cadastrar">Cadastro de Produtos</string>
     <string name="title_activity_sobre">Sobre o Aplicativo</string>
 
-    <string name="codigo">Codigo</string>
+    <string name="codigo">Código</string>
     <string name="nome">Nome</string>
     <string name="descricao">Descrição</string>
-    <string name="sobre">Sobre</string>
     <string name="imagem">Link da Imagem</string>
 
-    <string name="cadastrar">Cadastrar</string>
+    <string name="cadastrar">Inserir</string>
 </resources>
