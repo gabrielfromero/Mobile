@@ -1,4 +1,4 @@
-package com.wolff.jackson.aula04_gabriel;
+package com.wolff.jackson.aula04_jacksonwolff;
 
 import android.app.Activity;
 import android.app.NotificationManager;
