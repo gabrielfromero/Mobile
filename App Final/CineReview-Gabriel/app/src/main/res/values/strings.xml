@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Cine Review - Gabriel</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="cinemas">
+        <item>GNC Shopping IGUATEMI</item>
+        <item>GNC Shopping BB Wallig</item>
+        <item>GNC Shopping BB Country</item>
+        <item>GNC Shopping Lindoia</item>
+        <item>GNC Shopping BB StripCenter</item>
+        <item>GNC Shopping Praia de Belas</item>
+        <item>GNC Shopping Moinhos de Vento</item>
+        <item>GNC Shopping Alvorada</item>
+    </string-array>
+    <string name="title_activity_cadastrar">CadastrarActivity</string>
+
+</resources>
